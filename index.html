@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UEHive Documentation</title>
+  <meta name="description" content="Native Unreal Engine plugin for MCP-style Blueprint authoring, project-aware memory, internal workers, and reusable in-editor generation workflows.">
+  <meta name="theme-color" content="#101215">
+  <link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div class="brand-lockup">
+          <div class="brand-mark">UH</div>
+          <div>
+            <p class="eyebrow">UEHive Documentation</p>
+            <h1>Native MCP Blueprint Authoring for Unreal Engine</h1>
+          </div>
+        </div>
+        <div class="topbar-links">
+          <a href="#capabilities">Capabilities</a>
+          <a href="#showcase">Showcase</a>
+          <a href="#technical">Technical</a>
+          <a href="#validation">Validation</a>
+        </div>
+      </nav>
+
+      <div class="hero-grid">
+        <section class="hero-copy">
+          <span class="status-pill">UE 5.7 · Win64 · Editor Plugin</span>
+          <p class="hero-lead">
+            UEHive turns Unreal Editor into a project-aware Blueprint workspace with
+            reusable memory, internal role-based workers, and native in-editor authoring
+            for Blueprint actors, UI scaffolds, and gameplay interaction recipes.
+          </p>
+          <div class="cta-row">
+            <a class="cta-primary" href="#technical">Technical Overview</a>
+            <a class="cta-secondary" href="#showcase">Included Showcase</a>
+          </div>
+          <ul class="hero-points">
+            <li>Native Unreal C++ workflow</li>
+            <li>Project-local memory under <code>Saved/Skills</code></li>
+            <li>Built-in showcase map with working examples</li>
+          </ul>
+        </section>
+
+        <aside class="hero-panel">
+          <div class="panel-caption">Release Snapshot</div>
+          <div class="metric-grid">
+            <article class="metric-card">
+              <span class="metric-value">5</span>
+              <span class="metric-label">Showcase Blueprints</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">8</span>
+              <span class="metric-label">Material Assets</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">24</span>
+              <span class="metric-label">C++ Classes</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">3</span>
+              <span class="metric-label">Plugin Modules</span>
+            </article>
+          </div>
+          <div class="signal-card">
+            <p class="signal-title">Launch Scope</p>
+            <p>
+              Editor-focused Unreal productivity plugin for Blueprint workflows,
+              scaffolding, technical design support, and reusable project memory.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="capabilities">
+        <div class="section-heading">
+          <p class="section-kicker">Capabilities</p>
+          <h2>What UEHive is built to do</h2>
+          <p>
+            The current release is focused on practical output inside Unreal Editor,
+            not vague automation claims. These are the workflows already covered.
+          </p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability-card">
+            <h3>Blueprint Authoring</h3>
+            <p>Create Blueprint actors directly inside the editor through native Unreal workflows.</p>
+          </article>
+          <article class="capability-card">
+            <h3>Widget Generation</h3>
+            <p>Create Widget Blueprints and scaffold reusable layouts for menu, HUD, inventory, dialog, and settings.</p>
+          </article>
+          <article class="capability-card">
+            <h3>Gameplay Scaffolds</h3>
+            <p>Author targeted overlap-driven interactions and repeatable gameplay graph recipes.</p>
+          </article>
+          <article class="capability-card">
+            <h3>Project Memory</h3>
+            <p>Persist observed output and reusable skill knowledge under project-local <code>Saved/Skills</code>.</p>
+          </article>
+          <article class="capability-card">
+            <h3>Internal Workers</h3>
+            <p>Use plugin-bundled role-based workers for controlled in-editor generation tasks.</p>
+          </article>
+          <article class="capability-card">
+            <h3>Validation Flow</h3>
+            <p>Run compile-and-validate authoring workflows inside a live Unreal project.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-contrast" id="showcase">
+        <div class="section-heading">
+          <p class="section-kicker">Included Showcase</p>
+          <h2>Open the plugin and inspect working examples immediately</h2>
+          <p>
+            UEHive ships with plugin-owned sample content so buyers can inspect real results
+            instead of starting from an empty install.
+          </p>
+        </div>
+
+        <div class="showcase-layout">
+          <div class="showcase-summary">
+            <div class="summary-row">
+              <span>Maps</span>
+              <strong>1 showcase map</strong>
+            </div>
+            <div class="summary-row">
+              <span>Blueprints</span>
+              <strong>5 working examples</strong>
+            </div>
+            <div class="summary-row">
+              <span>Materials</span>
+              <strong>8 showcase assets</strong>
+            </div>
+          </div>
+
+          <div class="showcase-grid">
+            <article class="showcase-card">
+              <h3>Automatic Door</h3>
+              <p>Smooth interpolated door motion using native Unreal Blueprint logic.</p>
+            </article>
+            <article class="showcase-card">
+              <h3>Trigger Light</h3>
+              <p>Overlap-driven trigger behavior with named light control functions.</p>
+            </article>
+            <article class="showcase-card">
+              <h3>Rotating Pickup</h3>
+              <p>Pickup example using a native <code>RotatingMovementComponent</code>.</p>
+            </article>
+            <article class="showcase-card">
+              <h3>Patrol Enemy</h3>
+              <p>Simple patrol behavior for demonstration and gameplay scaffolding reference.</p>
+            </article>
+            <article class="showcase-card">
+              <h3>Procedural Scatter</h3>
+              <p>Procedural-style scatter showcase for visually demonstrating generated scene systems.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="technical">
+        <div class="section-heading">
+          <p class="section-kicker">Technical Summary</p>
+          <h2>Current release facts</h2>
+          <p>
+            This page is meant to help buyers understand the launch scope quickly and clearly.
+          </p>
+        </div>
+
+        <div class="technical-grid">
+          <article class="info-card">
+            <h3>Platform</h3>
+            <ul>
+              <li>Unreal Engine <strong>5.7</strong></li>
+              <li>Windows <strong>Win64</strong></li>
+              <li>Editor-focused plugin</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <h3>Modules</h3>
+            <ul>
+              <li><strong>UEHiveCore</strong> - Runtime</li>
+              <li><strong>UEHiveWorker</strong> - Runtime</li>
+              <li><strong>UEHiveEditor</strong> - Editor</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <h3>Validated Workflows</h3>
+            <ul>
+              <li>Blueprint actor creation</li>
+              <li>Widget Blueprint creation</li>
+              <li>UMG scaffold generation</li>
+              <li>Gameplay interaction scaffolds</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <h3>Important Notes</h3>
+            <ul>
+              <li>No network replication requirement for the shipped showcase content</li>
+              <li>Editor workflow plugin, not a runtime gameplay framework</li>
+              <li>Recipe-based graph authoring, not arbitrary freeform graph generation</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-validation" id="validation">
+        <div class="section-heading">
+          <p class="section-kicker">Validation</p>
+          <h2>Validated in a live Unreal project</h2>
+          <p>
+            The current release was exercised in a live Unreal project to verify authoring,
+            scaffold application, and plugin-owned showcase output.
+          </p>
+        </div>
+
+        <div class="validation-strip">
+          <article class="validation-card">
+            <h3>Project Validation</h3>
+            <p>
+              Verified in a live Unreal project for Blueprint actor creation, Widget Blueprint
+              creation, scaffold application, and showcase generation.
+            </p>
+          </article>
+          <article class="validation-card">
+            <h3>Showcase Validation</h3>
+            <p>
+              Plugin-owned showcase content is generated and saved inside plugin content, making
+              it suitable for packaging and immediate buyer inspection.
+            </p>
+          </article>
+          <article class="validation-card">
+            <h3>Release Position</h3>
+            <p>
+              Best positioned as a premium editor productivity plugin for Blueprint-heavy
+              workflows and technical design support.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-footer-callout">
+        <div class="footer-callout">
+          <div>
+            <p class="section-kicker">Support</p>
+            <h2>Need help after purchase?</h2>
+            <p>
+              Use the Fab listing discussion thread or the support channel associated with the product listing.
+            </p>
+          </div>
+          <a class="cta-secondary" href="https://github.com/spirit122/uehive-docs" target="_blank" rel="noreferrer">View Docs Repo</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
