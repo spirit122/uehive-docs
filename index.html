@@ -83,58 +83,80 @@
       <section class="section" id="install">
         <div class="section-heading">
           <p class="section-kicker">Install</p>
-          <h2>From Epic Games Launcher to Unreal Editor</h2>
+          <h2>Install UEHive in minutes</h2>
           <p>
-            This is the recommended first-time setup flow for buyers installing UEHive from Fab.
+            The normal buyer workflow is simple: install UEHive from Epic Games Launcher,
+            open Unreal Engine, and launch the panel. No manual file copy is required.
           </p>
         </div>
 
         <div class="howto-grid">
           <article class="step-card">
             <span class="step-index">01</span>
-            <h3>Acquire UEHive in Fab</h3>
+            <h3>Add UEHive to your Fab Library</h3>
             <p>
-              Purchase or claim the product on Fab so it appears in your Fab library.
+              Purchase or claim UEHive on Fab so it appears in your library.
             </p>
           </article>
           <article class="step-card">
             <span class="step-index">02</span>
-            <h3>Open Epic Games Launcher</h3>
+            <h3>Install it from Epic Games Launcher</h3>
             <p>
-              Go to <strong>Unreal Engine &gt; Library</strong> and locate UEHive in the
-              <strong>Fab Library</strong> section.
+              Open <strong>Unreal Engine &gt; Library</strong>, find UEHive in the
+              <strong>Fab Library</strong>, and install it to <strong>Unreal Engine 5.7</strong>.
             </p>
           </article>
           <article class="step-card">
             <span class="step-index">03</span>
-            <h3>Install to Unreal Engine 5.7</h3>
+            <h3>Open your project in Unreal Engine</h3>
             <p>
-              Use the launcher install flow for the UEHive plugin and target
-              <strong>Unreal Engine 5.7</strong>.
+              Start <strong>Unreal Engine 5.7</strong> and open an existing project or a clean test project.
             </p>
           </article>
           <article class="step-card">
             <span class="step-index">04</span>
-            <h3>Open Your Project</h3>
+            <h3>Enable the plugin if Unreal asks for it</h3>
             <p>
-              Start Unreal Engine 5.7 and open an existing project or create a new test project.
+              If UEHive is disabled, go to <strong>Edit &gt; Plugins</strong>, search for
+              <strong>UEHive</strong>, enable it, and restart the editor once.
             </p>
           </article>
           <article class="step-card">
             <span class="step-index">05</span>
-            <h3>Enable the Plugin if Needed</h3>
+            <h3>Open the UEHive panel</h3>
             <p>
-              If UEHive is not already active, go to <strong>Edit &gt; Plugins</strong>,
-              search for <strong>UEHive</strong>, enable it, and restart the editor.
+              Open <strong>Window &gt; UEHive Native Fabric</strong> to access the plugin interface.
             </p>
           </article>
           <article class="step-card">
             <span class="step-index">06</span>
-            <h3>Open the Panel</h3>
+            <h3>Pick the easiest startup mode</h3>
             <p>
-              Open <strong>Window &gt; UEHive Native Fabric</strong> to access the plugin panel.
+              For the fastest local Codex-ready setup, choose <strong>Internal Swarm</strong>.
+              Use <strong>Fab Safe</strong> later when preparing a packaged demo or marketplace build.
             </p>
           </article>
+        </div>
+
+        <div class="workflow-callout">
+          <h3>Simplest Codex Connection Path</h3>
+          <p class="callout-copy">
+            Install UEHive once from the Launcher, open <strong>Window &gt; UEHive Native Fabric</strong>,
+            keep the project open, and use <strong>Internal Swarm</strong> for the shortest local Codex workflow.
+            UEHive exposes its local bridge from the editor session, so buyers do not need to copy the plugin manually
+            or search for it from outside Unreal just to get started.
+          </p>
+        </div>
+
+        <div class="workflow-callout">
+          <h3>Where should I open Codex?</h3>
+          <p class="callout-copy">
+            <strong>Install UEHive to Unreal Engine, but open Codex on your Unreal project.</strong>
+            After the plugin is installed and enabled, start Codex from the
+            <strong>project root folder</strong> that contains the <code>.uproject</code>,
+            <code>Content</code>, <code>Config</code>, and <code>Saved</code> folders.
+            Do <strong>not</strong> target the Engine installation folder unless you are developing UEHive itself.
+          </p>
         </div>
       </section>
 
@@ -149,11 +171,11 @@
 
         <div class="getting-started-grid">
           <article class="guide-card">
-            <h3>1. Choose a safe first-run preset</h3>
+            <h3>1. Choose the right first-run mode</h3>
             <p>
-              For marketplace-style demos and safer first sessions, use
-              <strong>Fab Safe</strong>. Other built-in options are
-              <strong>Local Solo Mapping</strong> and <strong>Internal Swarm</strong>.
+              The shortest path for a local Codex session is <strong>Internal Swarm</strong>.
+              Use <strong>Fab Safe</strong> when you want safer packaged demos, and
+              <strong>Local Solo Mapping</strong> when you want a lower-risk local pass first.
             </p>
           </article>
 
@@ -167,15 +189,23 @@
           </article>
 
           <article class="guide-card">
-            <h3>3. Inspect what the plugin already knows</h3>
+            <h3>3. Confirm the bridge is online</h3>
             <p>
-              Use the UEHive panel to inspect the project-aware view, skill memory, and the
-              current execution state inside the editor.
+              Open the UEHive panel and confirm the local bridge is online before trying deeper Codex-driven workflows.
+              This is the quickest sanity check that the editor session is ready.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>4. Run your first authoring workflow</h3>
+            <h3>4. Open Codex on the project root</h3>
+            <p>
+              Launch Codex from the Unreal project folder, not from the Engine install directory.
+              This gives Codex the correct project context, content paths, config files, and UEHive skill memory.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>5. Run your first authoring workflow</h3>
             <p>
               The current release is built around practical editor workflows such as Blueprint
               actor creation, Widget Blueprint generation, UI layout scaffolds, and targeted
@@ -184,7 +214,7 @@
           </article>
 
           <article class="guide-card">
-            <h3>5. Keep project memory between sessions</h3>
+            <h3>6. Keep project memory between sessions</h3>
             <p>
               UEHive persists reusable project memory under <code>Saved/Skills</code>, so later
               sessions can reuse what was already mapped or observed.
@@ -192,7 +222,7 @@
           </article>
 
           <article class="guide-card">
-            <h3>6. Use a test map before touching production content</h3>
+            <h3>7. Use a test map before touching production content</h3>
             <p>
               The best onboarding path is to start in a clean test level, validate your first
               Blueprint workflows, and then move into your main project areas.
@@ -204,9 +234,9 @@
           <h3>Recommended first session</h3>
           <ol class="workflow-list">
             <li>Install UEHive from the Fab Library in Epic Games Launcher.</li>
-            <li>Open Unreal Engine 5.7 and enable the plugin if needed.</li>
-            <li>Open <strong>Window &gt; UEHive Native Fabric</strong>.</li>
-            <li>Choose <strong>Fab Safe</strong> for a clean first run.</li>
+            <li>Open Unreal Engine 5.7 and launch <strong>Window &gt; UEHive Native Fabric</strong>.</li>
+            <li>Select <strong>Internal Swarm</strong> if you want the shortest local Codex-ready setup.</li>
+            <li>Open Codex on the <strong>project root folder</strong>, not on the Engine installation folder.</li>
             <li>Open the built-in showcase map and inspect the included Blueprint examples.</li>
             <li>Create your first test Blueprint in a non-production map.</li>
           </ol>
