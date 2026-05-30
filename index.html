@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UEHive Documentation</title>
-  <meta name="description" content="Native Unreal Engine plugin for MCP-style Blueprint authoring, project-aware memory, internal workers, and reusable in-editor generation workflows.">
+  <title>UEHive Buyer Guide</title>
+  <meta name="description" content="Simple buyer guide for installing UEHive, opening it in Unreal Engine, connecting external AI tools, and fixing common Epic Games Launcher issues.">
   <meta name="theme-color" content="#101215">
   <link rel="stylesheet" href="./assets/site.css">
 </head>
@@ -15,64 +15,65 @@
         <div class="brand-lockup">
           <div class="brand-mark">UH</div>
           <div>
-            <p class="eyebrow">UEHive Documentation</p>
-            <h1>Native MCP Blueprint Authoring for Unreal Engine</h1>
+            <p class="eyebrow">UEHive Buyer Guide</p>
+            <h1>AI bridge for Unreal Engine projects</h1>
           </div>
         </div>
         <div class="topbar-links">
           <a href="#install">Install</a>
-          <a href="#getting-started">First Use</a>
-          <a href="#capabilities">Capabilities</a>
+          <a href="#connect-ai">Connect AI</a>
+          <a href="#first-test">First Test</a>
+          <a href="#troubleshooting">Troubleshooting</a>
           <a href="#showcase">Showcase</a>
           <a href="#technical">Technical</a>
-          <a href="#validation">Validation</a>
         </div>
       </nav>
 
       <div class="hero-grid">
         <section class="hero-copy">
-          <span class="status-pill">UE 5.7 · Win64 · Editor Plugin</span>
+          <span class="status-pill">UE 5.7 &middot; Win64 &middot; Editor Plugin</span>
           <p class="hero-lead">
-            UEHive turns Unreal Editor into a project-aware Blueprint workspace with
-            reusable memory, internal role-based workers, and native in-editor authoring
-            for Blueprint actors, UI scaffolds, and gameplay interaction recipes.
+            UEHive is the Unreal-side bridge that helps AI tools such as Claude,
+            Codex, ChatGPT, and Gemini work with your Unreal project context.
+            You keep using your AI app for chat and instructions; UEHive handles
+            the editor-side connection, Blueprint authoring support, and project memory.
           </p>
           <div class="cta-row">
-            <a class="cta-primary" href="#technical">Technical Overview</a>
-            <a class="cta-secondary" href="#showcase">Included Showcase</a>
+            <a class="cta-primary" href="#install">Start Here</a>
+            <a class="cta-secondary" href="#troubleshooting">Fix Install Issues</a>
           </div>
           <ul class="hero-points">
-            <li>Native Unreal C++ workflow</li>
-            <li>Project-local memory under <code>Saved/Skills</code></li>
-            <li>Built-in showcase map with working examples</li>
+            <li>Install from Fab through Epic Games Launcher</li>
+            <li>Open the UEHive panel inside Unreal Editor</li>
+            <li>Connect your AI app to the project, not to the Engine folder</li>
           </ul>
         </section>
 
         <aside class="hero-panel">
-          <div class="panel-caption">Release Snapshot</div>
+          <div class="panel-caption">What you get</div>
           <div class="metric-grid">
             <article class="metric-card">
               <span class="metric-value">5</span>
               <span class="metric-label">Showcase Blueprints</span>
             </article>
             <article class="metric-card">
-              <span class="metric-value">8</span>
-              <span class="metric-label">Material Assets</span>
-            </article>
-            <article class="metric-card">
-              <span class="metric-value">24</span>
-              <span class="metric-label">C++ Classes</span>
+              <span class="metric-value">1</span>
+              <span class="metric-label">Showcase Map</span>
             </article>
             <article class="metric-card">
               <span class="metric-value">3</span>
               <span class="metric-label">Plugin Modules</span>
             </article>
+            <article class="metric-card">
+              <span class="metric-value">5.7</span>
+              <span class="metric-label">Unreal Engine Version</span>
+            </article>
           </div>
           <div class="signal-card">
-            <p class="signal-title">Launch Scope</p>
+            <p class="signal-title">Current workflow</p>
             <p>
-              Editor-focused Unreal productivity plugin for Blueprint workflows,
-              scaffolding, technical design support, and reusable project memory.
+              The plugin lives inside Unreal Editor. The AI conversation still happens
+              in your chosen AI tool, while UEHive provides the Unreal project bridge.
             </p>
           </div>
         </aside>
@@ -83,175 +84,237 @@
       <section class="section" id="install">
         <div class="section-heading">
           <p class="section-kicker">Install</p>
-          <h2>Install UEHive in minutes</h2>
+          <h2>Install UEHive from Fab</h2>
           <p>
-            The normal buyer workflow is simple: install UEHive from Epic Games Launcher,
-            open Unreal Engine, and launch the panel. No manual file copy is required.
+            Use this path if you bought UEHive from Fab or added it to your Epic Games account.
+            You do not need to copy plugin files manually.
           </p>
         </div>
 
         <div class="howto-grid">
           <article class="step-card">
             <span class="step-index">01</span>
-            <h3>Add UEHive to your Fab Library</h3>
+            <h3>Use the same Epic account</h3>
             <p>
-              Purchase or claim UEHive on Fab so it appears in your library.
+              Sign in to Epic Games Launcher with the same account that purchased or claimed UEHive on Fab.
             </p>
           </article>
           <article class="step-card">
             <span class="step-index">02</span>
-            <h3>Install it from Epic Games Launcher</h3>
+            <h3>Refresh the Launcher</h3>
             <p>
-              Open <strong>Unreal Engine &gt; Library</strong>, find UEHive in the
-              <strong>Fab Library</strong>, and install it to <strong>Unreal Engine 5.7</strong>.
+              Fully close Epic Games Launcher, including the tray icon, then open it again.
+              This often makes newly purchased plugins appear.
             </p>
           </article>
           <article class="step-card">
             <span class="step-index">03</span>
-            <h3>Open your project in Unreal Engine</h3>
+            <h3>Install to Unreal Engine 5.7</h3>
             <p>
-              Start <strong>Unreal Engine 5.7</strong> and open an existing project or a clean test project.
+              In <strong>Unreal Engine &gt; Library</strong>, find UEHive in your Fab or Vault library
+              and install it to <strong>Unreal Engine 5.7</strong>.
             </p>
           </article>
           <article class="step-card">
             <span class="step-index">04</span>
-            <h3>Enable the plugin if Unreal asks for it</h3>
+            <h3>Open your Unreal project</h3>
             <p>
-              If UEHive is disabled, go to <strong>Edit &gt; Plugins</strong>, search for
-              <strong>UEHive</strong>, enable it, and restart the editor once.
+              Start Unreal Engine 5.7 and open the project where you want to use UEHive.
+              A clean test project is best for the first session.
             </p>
           </article>
           <article class="step-card">
             <span class="step-index">05</span>
-            <h3>Open the UEHive panel</h3>
+            <h3>Enable UEHive</h3>
             <p>
-              Open the <strong>Window</strong> menu in Unreal Editor, scroll until you see the
-              <strong>UEHive</strong> section, and click <strong>Native Fabric</strong>.
+              If Unreal asks, go to <strong>Edit &gt; Plugins</strong>, search for <strong>UEHive</strong>,
+              enable it, and restart the editor once.
             </p>
           </article>
           <article class="step-card">
             <span class="step-index">06</span>
-            <h3>Pick the easiest startup mode</h3>
+            <h3>Open the panel</h3>
             <p>
-              For the fastest local Codex-ready setup, choose <strong>Internal Swarm</strong>.
-              Use <strong>Fab Safe</strong> later when preparing a packaged demo or marketplace build.
+              Open the <strong>Window</strong> menu in Unreal Editor and look for the UEHive panel.
+              If the entry is not visible, scroll the Window menu.
             </p>
           </article>
         </div>
 
         <div class="workflow-callout">
-          <h3>Where do I find the panel in Unreal?</h3>
+          <h3>Important: where to open your AI tool</h3>
           <p class="callout-copy">
-            In Unreal Editor, open the <strong>Window</strong> menu and look for the
-            <strong>UEHive</strong> section in the list. The panel entry appears there as
-            <strong>Native Fabric</strong>. If you do not see it immediately, scroll down in the
-            Window menu until the UEHive section becomes visible.
-          </p>
-        </div>
-
-        <div class="workflow-callout">
-          <h3>Simplest Codex Connection Path</h3>
-          <p class="callout-copy">
-            Install UEHive once from the Launcher, open the <strong>Window</strong> menu, click
-            <strong>Native Fabric</strong> under the <strong>UEHive</strong> section,
-            keep the project open, and use <strong>Internal Swarm</strong> for the shortest local Codex workflow.
-            UEHive exposes its local bridge from the editor session, so buyers do not need to copy the plugin manually
-            or search for it from outside Unreal just to get started.
-          </p>
-        </div>
-
-        <div class="workflow-callout">
-          <h3>Where should I open Codex?</h3>
-          <p class="callout-copy">
-            <strong>Install UEHive to Unreal Engine, but open Codex on your Unreal project.</strong>
-            After the plugin is installed and enabled, start Codex from the
-            <strong>project root folder</strong> that contains the <code>.uproject</code>,
-            <code>Content</code>, <code>Config</code>, and <code>Saved</code> folders.
-            Do <strong>not</strong> target the Engine installation folder unless you are developing UEHive itself.
+            Open Codex or your other AI coding tool on the <strong>Unreal project root folder</strong>,
+            the folder that contains the <code>.uproject</code>, <code>Content</code>,
+            <code>Config</code>, and <code>Saved</code> folders. Do not open it on the Unreal Engine
+            installation folder unless you are developing engine code.
           </p>
         </div>
       </section>
 
-      <section class="section section-contrast" id="getting-started">
+      <section class="section section-contrast" id="connect-ai">
         <div class="section-heading">
-          <p class="section-kicker">First Use</p>
-          <h2>How to start using UEHive after installation</h2>
+          <p class="section-kicker">Connect AI</p>
+          <h2>How UEHive works with Claude, Codex, ChatGPT, or Gemini</h2>
           <p>
-            These steps help new users get value quickly without needing to guess the workflow.
+            UEHive is not a replacement chat app. It is the native Unreal bridge that gives
+            your AI workflow better project context and editor-side execution paths.
           </p>
         </div>
 
         <div class="getting-started-grid">
           <article class="guide-card">
-            <h3>1. Choose the right first-run mode</h3>
+            <h3>1. Keep Unreal Editor open</h3>
             <p>
-              The shortest path for a local Codex session is <strong>Internal Swarm</strong>.
-              Use <strong>Fab Safe</strong> when you want safer packaged demos, and
-              <strong>Local Solo Mapping</strong> when you want a lower-risk local pass first.
+              UEHive works from the active editor session, so open your Unreal project and keep it running.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>2. Start with the included showcase</h3>
+            <h3>2. Open your AI app normally</h3>
             <p>
-              Open the built-in showcase map under
-              <code>/UEHive/FabShowcase/Maps/L_UEHive_FabBlueprintShowcase</code>
-              to inspect the shipped examples immediately.
+              Use Claude, Codex, ChatGPT, Gemini, or your preferred MCP-capable workflow for the conversation.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>3. Confirm the bridge is online</h3>
+            <h3>3. Point the AI tool at your project</h3>
             <p>
-              Open the UEHive panel and confirm the local bridge is online before trying deeper Codex-driven workflows.
-              This is the quickest sanity check that the editor session is ready.
+              If the tool asks for a folder, choose the Unreal project folder that contains the
+              <code>.uproject</code> file.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>4. Open Codex on the project root</h3>
+            <h3>4. Use UEHive for Unreal-side work</h3>
             <p>
-              Launch Codex from the Unreal project folder, not from the Engine install directory.
-              This gives Codex the correct project context, content paths, config files, and UEHive skill memory.
+              Ask your AI tool to work through UEHive when the task needs Unreal project knowledge,
+              Blueprint authoring support, or editor-side validation.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>5. Run your first authoring workflow</h3>
+            <h3>5. Start with safe test content</h3>
             <p>
-              The current release is built around practical editor workflows such as Blueprint
-              actor creation, Widget Blueprint generation, UI layout scaffolds, and targeted
-              gameplay interaction recipes.
+              Use a test map or test Blueprint first. Confirm the generated result before applying
+              the workflow to production content.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>6. Keep project memory between sessions</h3>
+            <h3>6. Reuse project memory</h3>
             <p>
-              UEHive persists reusable project memory under <code>Saved/Skills</code>, so later
-              sessions can reuse what was already mapped or observed.
+              UEHive keeps reusable project knowledge under <code>Saved/Skills</code> so later sessions
+              can build on previous observations.
             </p>
           </article>
+        </div>
+      </section>
 
-          <article class="guide-card">
-            <h3>7. Use a test map before touching production content</h3>
-            <p>
-              The best onboarding path is to start in a clean test level, validate your first
-              Blueprint workflows, and then move into your main project areas.
-            </p>
-          </article>
+      <section class="section" id="first-test">
+        <div class="section-heading">
+          <p class="section-kicker">First Test</p>
+          <h2>Run a simple first session</h2>
+          <p>
+            This is the safest way to confirm the plugin is installed correctly before using it on real project work.
+          </p>
         </div>
 
         <div class="workflow-callout">
           <h3>Recommended first session</h3>
           <ol class="workflow-list">
-            <li>Install UEHive from the Fab Library in Epic Games Launcher.</li>
-            <li>Open Unreal Engine 5.7, open the <strong>Window</strong> menu, and click <strong>Native Fabric</strong> in the <strong>UEHive</strong> section.</li>
-            <li>Select <strong>Internal Swarm</strong> if you want the shortest local Codex-ready setup.</li>
-            <li>Open Codex on the <strong>project root folder</strong>, not on the Engine installation folder.</li>
-            <li>Open the built-in showcase map and inspect the included Blueprint examples.</li>
-            <li>Create your first test Blueprint in a non-production map.</li>
+            <li>Install UEHive from Epic Games Launcher and enable it in Unreal Editor 5.7.</li>
+            <li>Open the UEHive panel from the Unreal <strong>Window</strong> menu.</li>
+            <li>Open your AI tool on the Unreal project root folder.</li>
+            <li>Open the included showcase map and inspect the shipped Blueprint examples.</li>
+            <li>Create or modify one test Blueprint in a non-production map.</li>
+            <li>Compile and verify the result inside Unreal before continuing.</li>
           </ol>
+        </div>
+
+        <div class="howto-grid">
+          <article class="step-card">
+            <span class="step-index">01</span>
+            <h3>Open the showcase</h3>
+            <p>
+              Start by opening <code>/UEHive/FabShowcase/Maps/L_UEHive_FabBlueprintShowcase</code>.
+            </p>
+          </article>
+          <article class="step-card">
+            <span class="step-index">02</span>
+            <h3>Check the examples</h3>
+            <p>
+              Inspect the included door, trigger light, pickup, patrol enemy, and scatter examples.
+            </p>
+          </article>
+          <article class="step-card">
+            <span class="step-index">03</span>
+            <h3>Try one safe edit</h3>
+            <p>
+              Run one small AI-assisted editor task, then compile and inspect the result in Unreal.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-contrast" id="troubleshooting">
+        <div class="section-heading">
+          <p class="section-kicker">Troubleshooting</p>
+          <h2>Common buyer issues</h2>
+          <p>
+            These fixes cover the most common first-day problems: the plugin not appearing,
+            the panel not opening, or the AI tool looking at the wrong folder.
+          </p>
+        </div>
+
+        <div class="getting-started-grid">
+          <article class="guide-card">
+            <h3>I purchased it but cannot download it</h3>
+            <p>
+              Fully quit Epic Games Launcher, reopen it, and check your Fab or Vault library again.
+              If it still does not appear, sign out and sign back in with the purchase account.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>The Launcher still does not show UEHive</h3>
+            <p>
+              Restart Windows and open the Launcher again. If the library is still stale, reinstalling
+              Epic Games Launcher can force a clean refresh. You normally do not need to reinstall Unreal Engine.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>UEHive is installed but disabled</h3>
+            <p>
+              Open <strong>Edit &gt; Plugins</strong>, search for <strong>UEHive</strong>, enable it,
+              then restart Unreal Editor when prompted.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>I cannot find the panel</h3>
+            <p>
+              Open Unreal Editor's <strong>Window</strong> menu and scroll through the list.
+              If the plugin was enabled during the same session, restart the editor once.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>My AI tool cannot see the project</h3>
+            <p>
+              Close the AI workspace and reopen it on the Unreal project root folder, not on
+              <code>UE_5.7</code>, <code>Engine</code>, or the plugin install folder.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Support checklist</h3>
+            <p>
+              When asking for help, include your Unreal version, Windows version, AI tool name,
+              whether UEHive appears in <strong>Edit &gt; Plugins</strong>, and any error text.
+            </p>
+          </article>
         </div>
       </section>
 
@@ -260,8 +323,7 @@
           <p class="section-kicker">Capabilities</p>
           <h2>What UEHive is built to do</h2>
           <p>
-            The current release is focused on practical output inside Unreal Editor,
-            not vague automation claims. These are the workflows already covered.
+            The current release focuses on practical Unreal Editor output, not broad automation claims.
           </p>
         </div>
 
@@ -283,12 +345,12 @@
             <p>Persist observed output and reusable skill knowledge under project-local <code>Saved/Skills</code>.</p>
           </article>
           <article class="capability-card">
-            <h3>Internal Workers</h3>
-            <p>Use plugin-bundled role-based workers for controlled in-editor generation tasks.</p>
+            <h3>Controlled Editor Tasks</h3>
+            <p>Use plugin-side task handling for guided in-editor generation and validation workflows.</p>
           </article>
           <article class="capability-card">
             <h3>Validation Flow</h3>
-            <p>Run compile-and-validate authoring workflows inside a live Unreal project.</p>
+            <p>Run compile-and-check authoring workflows inside a live Unreal project.</p>
           </article>
         </div>
       </section>
@@ -296,7 +358,7 @@
       <section class="section section-contrast" id="showcase">
         <div class="section-heading">
           <p class="section-kicker">Included Showcase</p>
-          <h2>Open the plugin and inspect working examples immediately</h2>
+          <h2>Open working examples immediately</h2>
           <p>
             UEHive ships with plugin-owned sample content so buyers can inspect real results
             instead of starting from an empty install.
@@ -349,7 +411,7 @@
           <p class="section-kicker">Technical Summary</p>
           <h2>Current release facts</h2>
           <p>
-            This page is meant to help buyers understand the launch scope quickly and clearly.
+            This section keeps expectations clear before and after purchase.
           </p>
         </div>
 
@@ -385,9 +447,10 @@
           <article class="info-card">
             <h3>Important Notes</h3>
             <ul>
-              <li>No network replication requirement for the shipped showcase content</li>
+              <li>UEHive is the Unreal-side bridge; chat and prompts still happen in your selected AI app</li>
               <li>Editor workflow plugin, not a runtime gameplay framework</li>
               <li>Recipe-based graph authoring, not arbitrary freeform graph generation</li>
+              <li>No network replication requirement for the shipped showcase content</li>
             </ul>
           </article>
         </div>
@@ -435,6 +498,7 @@
             <h2>Need help after purchase?</h2>
             <p>
               Use the Fab listing discussion thread or the support channel associated with the product listing.
+              Include your Unreal version, AI tool, Launcher status, and the exact error text if possible.
             </p>
           </div>
           <a class="cta-secondary" href="https://github.com/spirit122/uehive-docs" target="_blank" rel="noreferrer">View Docs Repo</a>
