@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UEHive Buyer Guide</title>
-  <meta name="description" content="Simple buyer guide for installing UEHive, opening it in Unreal Engine, connecting external AI tools, and fixing common Epic Games Launcher issues.">
+  <meta name="description" content="Simple buyer guide for installing UEHive, opening the AI Workspace in Unreal Engine, connecting Claude or OpenAI with buyer-owned API keys, and fixing common Epic Games Launcher issues.">
   <meta name="theme-color" content="#101215">
   <link rel="stylesheet" href="./assets/site.css">
 </head>
@@ -21,7 +21,7 @@
         </div>
         <div class="topbar-links">
           <a href="#install">Install</a>
-          <a href="#connect-ai">Connect AI</a>
+          <a href="#connect-ai">AI Workspace</a>
           <a href="#first-test">First Test</a>
           <a href="#troubleshooting">Troubleshooting</a>
           <a href="#showcase">Showcase</a>
@@ -31,12 +31,12 @@
 
       <div class="hero-grid">
         <section class="hero-copy">
-          <span class="status-pill">UE 5.7 &middot; Win64 &middot; Editor Plugin</span>
+          <span class="status-pill">UE 5.7 &middot; Win64 &middot; AI Workspace</span>
           <p class="hero-lead">
-            UEHive is the Unreal-side bridge that helps AI tools such as Claude,
-            Codex, ChatGPT, and Gemini work with your Unreal project context.
-            You keep using your AI app for chat and instructions; UEHive handles
-            the editor-side connection, Blueprint authoring support, and project memory.
+            UEHive adds an AI Workspace directly inside Unreal Editor. Buyers can connect
+            their own Claude or OpenAI API key, write prompts in the plugin, preview the
+            generated action plan, and approve native UEHive Blueprint or UMG execution
+            without leaving Unreal.
           </p>
           <div class="cta-row">
             <a class="cta-primary" href="#install">Start Here</a>
@@ -44,8 +44,8 @@
           </div>
           <ul class="hero-points">
             <li>Install from Fab through Epic Games Launcher</li>
-            <li>Open the UEHive panel inside Unreal Editor</li>
-            <li>Connect your AI app to the project, not to the Engine folder</li>
+            <li>Open the UEHive AI Workspace inside Unreal Editor</li>
+            <li>Use Claude/OpenAI inside the plugin, with Codex handoff still available</li>
           </ul>
         </section>
 
@@ -72,8 +72,8 @@
           <div class="signal-card">
             <p class="signal-title">Current workflow</p>
             <p>
-              The plugin lives inside Unreal Editor. The AI conversation still happens
-              in your chosen AI tool, while UEHive provides the Unreal project bridge.
+              The plugin lives inside Unreal Editor. Claude and OpenAI can run from the
+              built-in workspace using the buyer's own API key, while Codex remains an optional handoff.
             </p>
           </div>
         </aside>
@@ -133,79 +133,80 @@
           </article>
           <article class="step-card">
             <span class="step-index">06</span>
-            <h3>Open the panel</h3>
+            <h3>Open the AI Workspace</h3>
             <p>
-              Open the <strong>Window</strong> menu in Unreal Editor and look for the UEHive panel.
+              Open the <strong>Window</strong> menu in Unreal Editor and look for
+              <strong>UEHive AI Workspace</strong>.
               If the entry is not visible, scroll the Window menu.
             </p>
           </article>
         </div>
 
         <div class="workflow-callout">
-          <h3>Important: where to open your AI tool</h3>
+          <h3>Important: API keys and Codex handoff</h3>
           <p class="callout-copy">
-            Open Codex or your other AI coding tool on the <strong>Unreal project root folder</strong>,
-            the folder that contains the <code>.uproject</code>, <code>Content</code>,
-            <code>Config</code>, and <code>Saved</code> folders. Do not open it on the Unreal Engine
-            installation folder unless you are developing engine code.
+            UEHive does not include a shared vendor API key. Paste your own Claude or OpenAI key
+            inside the local workspace settings. If you still want to use Codex externally, use
+            <strong>Copy for Codex</strong> and open Codex on the Unreal project root folder.
           </p>
         </div>
       </section>
 
       <section class="section section-contrast" id="connect-ai">
         <div class="section-heading">
-          <p class="section-kicker">Connect AI</p>
-          <h2>How UEHive works with Claude, Codex, ChatGPT, or Gemini</h2>
+          <p class="section-kicker">AI Workspace</p>
+          <h2>Use Claude or OpenAI directly inside UEHive</h2>
           <p>
-            UEHive is not a replacement chat app. It is the native Unreal bridge that gives
-            your AI workflow better project context and editor-side execution paths.
+            The integrated workspace keeps the main workflow inside Unreal: prompt, context,
+            AI response, preview plan, approval, and native execution.
           </p>
         </div>
 
         <div class="getting-started-grid">
           <article class="guide-card">
-            <h3>1. Keep Unreal Editor open</h3>
+            <h3>1. Open UEHive AI Workspace</h3>
             <p>
-              UEHive works from the active editor session, so open your Unreal project and keep it running.
+              In Unreal Editor, use <strong>Window &gt; UEHive &gt; UEHive AI Workspace</strong>.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>2. Open your AI app normally</h3>
+            <h3>2. Choose Claude or OpenAI</h3>
             <p>
-              Use Claude, Codex, ChatGPT, Gemini, or your preferred MCP-capable workflow for the conversation.
+              Select the provider, enter your model name, and paste your own API key.
+              Keys are stored locally under <code>Saved/UEHive</code>.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>3. Point the AI tool at your project</h3>
+            <h3>3. Write the request</h3>
             <p>
-              If the tool asks for a folder, choose the Unreal project folder that contains the
-              <code>.uproject</code> file.
+              Describe what you want, choose a UEHive action, and set a target path such as
+              <code>/Game/UEHiveWorkspaceTests</code>.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>4. Use UEHive for Unreal-side work</h3>
+            <h3>4. Preview before execution</h3>
             <p>
-              Ask your AI tool to work through UEHive when the task needs Unreal project knowledge,
-              Blueprint authoring support, or editor-side validation.
+              UEHive shows the AI action plan first. Nothing modifies assets until you click
+              <strong>Execute Plan</strong>.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>5. Start with safe test content</h3>
+            <h3>5. Execute approved plans</h3>
             <p>
-              Use a test map or test Blueprint first. Confirm the generated result before applying
-              the workflow to production content.
+              Approved plans reuse UEHive's native capabilities for Blueprint actors, Widget Blueprints,
+              widget layouts, graph scaffolds, inspections, and level placement.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>6. Reuse project memory</h3>
+            <h3>6. Keep Codex optional</h3>
             <p>
-              UEHive keeps reusable project knowledge under <code>Saved/Skills</code> so later sessions
-              can build on previous observations.
+              The <strong>Copy for Codex</strong> button creates a clean prompt if you want to hand off
+              a larger coding task to Codex outside Unreal.
             </p>
           </article>
         </div>
@@ -224,8 +225,8 @@
           <h3>Recommended first session</h3>
           <ol class="workflow-list">
             <li>Install UEHive from Epic Games Launcher and enable it in Unreal Editor 5.7.</li>
-            <li>Open the UEHive panel from the Unreal <strong>Window</strong> menu.</li>
-            <li>Open your AI tool on the Unreal project root folder.</li>
+            <li>Open <strong>Window &gt; UEHive &gt; UEHive AI Workspace</strong>.</li>
+            <li>Paste your Claude or OpenAI API key and choose a model.</li>
             <li>Open the included showcase map and inspect the shipped Blueprint examples.</li>
             <li>Create or modify one test Blueprint in a non-production map.</li>
             <li>Compile and verify the result inside Unreal before continuing.</li>
@@ -447,7 +448,7 @@
           <article class="info-card">
             <h3>Important Notes</h3>
             <ul>
-              <li>UEHive is the Unreal-side bridge; chat and prompts still happen in your selected AI app</li>
+              <li>UEHive includes an AI Workspace for Claude/OpenAI API use inside Unreal; Codex remains an optional external handoff</li>
               <li>Editor workflow plugin, not a runtime gameplay framework</li>
               <li>Recipe-based graph authoring, not arbitrary freeform graph generation</li>
               <li>No network replication requirement for the shipped showcase content</li>
