@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UEHive Buyer Guide</title>
-  <meta name="description" content="Simple buyer guide for installing UEHive, opening the AI Workspace in Unreal Engine, connecting Claude or OpenAI with buyer-owned API keys, and fixing common Epic Games Launcher issues.">
+  <title>UEHive v0.9.8 Buyer Guide</title>
+  <meta name="description" content="Simple buyer guide for UEHive v0.9.8: install from Fab, open the AI Workspace in Unreal Engine, connect Claude or OpenAI with buyer-owned API keys, and run safe AI-assisted Blueprint workflows.">
   <meta name="theme-color" content="#101215">
   <link rel="stylesheet" href="./assets/site.css">
 </head>
@@ -15,8 +15,8 @@
         <div class="brand-lockup">
           <div class="brand-mark">UH</div>
           <div>
-            <p class="eyebrow">UEHive Buyer Guide</p>
-            <h1>AI bridge for Unreal Engine projects</h1>
+            <p class="eyebrow">UEHive v0.9.8 Buyer Guide</p>
+            <h1>AI Workspace for Unreal Engine projects</h1>
           </div>
         </div>
         <div class="topbar-links">
@@ -26,17 +26,18 @@
           <a href="#troubleshooting">Troubleshooting</a>
           <a href="#showcase">Showcase</a>
           <a href="#technical">Technical</a>
+          <a href="#release-notes">v0.9.8</a>
         </div>
       </nav>
 
       <div class="hero-grid">
         <section class="hero-copy">
-          <span class="status-pill">UE 5.7 &middot; Win64 &middot; AI Workspace</span>
+          <span class="status-pill">v0.9.8 &middot; UE 5.7 &middot; Win64</span>
           <p class="hero-lead">
-            UEHive adds an AI Workspace directly inside Unreal Editor. Buyers can connect
-            their own Claude or OpenAI API key, write prompts in the plugin, preview the
-            generated action plan, and approve native UEHive Blueprint or UMG execution
-            without leaving Unreal.
+            UEHive v0.9.8 adds an AI Workspace directly inside Unreal Editor. Buyers can connect
+            their own Claude or OpenAI API key, describe what they want in natural language,
+            preview the generated action plan, and approve native UEHive Blueprint, UMG, or
+            reviewable C++ draft workflows without leaving Unreal.
           </p>
           <div class="cta-row">
             <a class="cta-primary" href="#install">Start Here</a>
@@ -45,7 +46,7 @@
           <ul class="hero-points">
             <li>Install from Fab through Epic Games Launcher</li>
             <li>Open the UEHive AI Workspace inside Unreal Editor</li>
-            <li>Use Claude/OpenAI inside the plugin, with Codex handoff still available</li>
+            <li>Use Claude/OpenAI inside the plugin with preview-and-approve execution</li>
           </ul>
         </section>
 
@@ -72,8 +73,9 @@
           <div class="signal-card">
             <p class="signal-title">Current workflow</p>
             <p>
-              The plugin lives inside Unreal Editor. Claude and OpenAI can run from the
-              built-in workspace using the buyer's own API key, while Codex remains an optional handoff.
+              The plugin lives inside Unreal Editor. Claude and OpenAI run from the
+              built-in workspace using the buyer's own API key, with automatic target resolution
+              from the open Blueprint, selected asset, or active Content Browser folder.
             </p>
           </div>
         </aside>
@@ -135,8 +137,7 @@
             <span class="step-index">06</span>
             <h3>Open the AI Workspace</h3>
             <p>
-              Open the <strong>Window</strong> menu in Unreal Editor and look for
-              <strong>UEHive AI Workspace</strong>.
+              Open <strong>Window &gt; UEHive &gt; UEHive AI Workspace</strong>.
               If the entry is not visible, scroll the Window menu.
             </p>
           </article>
@@ -173,7 +174,7 @@
           <article class="guide-card">
             <h3>2. Choose Claude or OpenAI</h3>
             <p>
-              Select the provider, enter your model name, and paste your own API key.
+              Select the provider, choose a recommended model from the model menu, and paste your own API key.
               Keys are stored locally under <code>Saved/UEHive</code>.
             </p>
           </article>
@@ -181,8 +182,9 @@
           <article class="guide-card">
             <h3>3. Write the request</h3>
             <p>
-              Describe what you want, choose a UEHive action, and set a target path such as
-              <code>/Game/UEHiveWorkspaceTests</code>.
+              Describe what you want in natural language. UEHive resolves the target from the
+              selected or open Blueprint for inspect/scaffold tasks, and from the active Content
+              Browser folder for creation tasks.
             </p>
           </article>
 
@@ -198,7 +200,7 @@
             <h3>5. Execute approved plans</h3>
             <p>
               Approved plans reuse UEHive's native capabilities for Blueprint actors, Widget Blueprints,
-              widget layouts, graph scaffolds, inspections, and level placement.
+              widget layouts, graph scaffolds, inspections, level placement, and safe C++ helper drafts.
             </p>
           </article>
 
@@ -228,7 +230,7 @@
             <li>Open <strong>Window &gt; UEHive &gt; UEHive AI Workspace</strong>.</li>
             <li>Paste your Claude or OpenAI API key and choose a model.</li>
             <li>Open the included showcase map and inspect the shipped Blueprint examples.</li>
-            <li>Create or modify one test Blueprint in a non-production map.</li>
+            <li>Select a safe Content Browser folder or open a test Blueprint before running a creation or inspection task.</li>
             <li>Compile and verify the result inside Unreal before continuing.</li>
           </ol>
         </div>
@@ -302,10 +304,10 @@
           </article>
 
           <article class="guide-card">
-            <h3>My AI tool cannot see the project</h3>
+            <h3>UEHive cannot resolve a target</h3>
             <p>
-              Close the AI workspace and reopen it on the Unreal project root folder, not on
-              <code>UE_5.7</code>, <code>Engine</code>, or the plugin install folder.
+              For inspections or graph scaffolds, open or select a Blueprint first. For new assets,
+              select the destination folder in the Content Browser before sending the request.
             </p>
           </article>
 
@@ -346,12 +348,12 @@
             <p>Persist observed output and reusable skill knowledge under project-local <code>Saved/Skills</code>.</p>
           </article>
           <article class="capability-card">
-            <h3>Controlled Editor Tasks</h3>
-            <p>Use plugin-side task handling for guided in-editor generation and validation workflows.</p>
+            <h3>Automatic Target Resolution</h3>
+            <p>Use the selected or open Blueprint for inspection and scaffolding, and the active folder for creation.</p>
           </article>
           <article class="capability-card">
-            <h3>Validation Flow</h3>
-            <p>Run compile-and-check authoring workflows inside a live Unreal project.</p>
+            <h3>C++ Draft Helper</h3>
+            <p>Generate reviewable header/source drafts under <code>Saved/UEHive/CppDrafts</code> without modifying project Source automatically.</p>
           </article>
         </div>
       </section>
@@ -410,7 +412,7 @@
       <section class="section" id="technical">
         <div class="section-heading">
           <p class="section-kicker">Technical Summary</p>
-          <h2>Current release facts</h2>
+          <h2>UEHive v0.9.8 release facts</h2>
           <p>
             This section keeps expectations clear before and after purchase.
           </p>
@@ -442,17 +444,76 @@
               <li>Widget Blueprint creation</li>
               <li>UMG scaffold generation</li>
               <li>Gameplay interaction scaffolds</li>
+              <li>Blueprint inspection and follow-up modification</li>
+              <li>Reviewable C++ helper draft generation</li>
             </ul>
           </article>
 
           <article class="info-card">
             <h3>Important Notes</h3>
             <ul>
-              <li>UEHive includes an AI Workspace for Claude/OpenAI API use inside Unreal; Codex remains an optional external handoff</li>
+              <li>UEHive v0.9.8 includes an AI Workspace for Claude/OpenAI API use inside Unreal</li>
               <li>Editor workflow plugin, not a runtime gameplay framework</li>
               <li>Recipe-based graph authoring, not arbitrary freeform graph generation</li>
+              <li>C++ helper drafts are saved for review and do not modify project Source automatically</li>
               <li>No network replication requirement for the shipped showcase content</li>
             </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-contrast" id="release-notes">
+        <div class="section-heading">
+          <p class="section-kicker">Release Notes</p>
+          <h2>What changed in v0.9.8</h2>
+          <p>
+            This update focuses on making UEHive feel more like an in-editor assistant while keeping
+            execution controlled and reviewable.
+          </p>
+        </div>
+
+        <div class="getting-started-grid">
+          <article class="guide-card">
+            <h3>Assistant-style workspace</h3>
+            <p>
+              A cleaner chat-first UI lets buyers discuss the task, review the generated plan,
+              and execute only after approval.
+            </p>
+          </article>
+          <article class="guide-card">
+            <h3>Smarter target handling</h3>
+            <p>
+              UEHive now uses the open or selected Blueprint for inspection/scaffold tasks and
+              the active Content Browser folder for asset creation.
+            </p>
+          </article>
+          <article class="guide-card">
+            <h3>More gameplay scaffolds</h3>
+            <p>
+              Validated examples include sliding doors, trigger lights, rotating pickups,
+              simple patrol actors, and procedural scatter systems.
+            </p>
+          </article>
+          <article class="guide-card">
+            <h3>Project memory</h3>
+            <p>
+              Successful workflows are saved as reusable local skills so future sessions can reuse
+              proven patterns instead of starting from scratch.
+            </p>
+          </article>
+          <article class="guide-card">
+            <h3>Safe C++ drafting</h3>
+            <p>
+              UEHive can draft C++ helper files for review under <code>Saved/UEHive/CppDrafts</code>.
+              Source files are not changed automatically.
+            </p>
+          </article>
+          <article class="guide-card">
+            <h3>Clearer safety defaults</h3>
+            <p>
+              Plans stay in preview mode until the user approves execution, and UEHive avoids
+              editing Engine content.
+            </p>
           </article>
         </div>
       </section>
@@ -472,7 +533,7 @@
             <h3>Project Validation</h3>
             <p>
               Verified in a live Unreal project for Blueprint actor creation, Widget Blueprint
-              creation, scaffold application, and showcase generation.
+              creation, scaffold application, target resolution, and C++ helper drafting.
             </p>
           </article>
           <article class="validation-card">
