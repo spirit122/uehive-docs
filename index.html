@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UEHive v0.9.8 Buyer Guide</title>
-  <meta name="description" content="Simple buyer guide for UEHive v0.9.8: install from Fab, open the AI Workspace in Unreal Engine, connect Claude or OpenAI with buyer-owned API keys, and run safe AI-assisted Blueprint workflows.">
+  <meta name="description" content="Simple buyer guide for UEHive v0.9.8: install from Fab, understand API key versus MCP-style bridge workflows, open the AI Workspace in Unreal Engine, and run safe AI-assisted Blueprint workflows.">
   <meta name="theme-color" content="#101215">
   <link rel="stylesheet" href="./assets/site.css">
 </head>
@@ -21,6 +21,7 @@
         </div>
         <div class="topbar-links">
           <a href="#install">Install</a>
+          <a href="#ai-access">API or MCP</a>
           <a href="#connect-ai">AI Workspace</a>
           <a href="#first-test">First Test</a>
           <a href="#troubleshooting">Troubleshooting</a>
@@ -36,8 +37,8 @@
           <p class="hero-lead">
             UEHive v0.9.8 adds an AI Workspace directly inside Unreal Editor. Buyers can connect
             their own Claude or OpenAI API key, describe what they want in natural language,
-            preview the generated action plan, and approve native UEHive Blueprint, UMG, or
-            reviewable C++ draft workflows without leaving Unreal.
+            preview the generated action plan, and approve native UEHive Blueprint or UMG
+            workflows without leaving Unreal.
           </p>
           <div class="cta-row">
             <a class="cta-primary" href="#install">Start Here</a>
@@ -73,9 +74,9 @@
           <div class="signal-card">
             <p class="signal-title">Current workflow</p>
             <p>
-              The plugin lives inside Unreal Editor. Claude and OpenAI run from the
-              built-in workspace using the buyer's own API key, with automatic target resolution
-              from the open Blueprint, selected asset, or active Content Browser folder.
+              The plugin lives inside Unreal Editor. Use the built-in AI Workspace with your own
+              Claude/OpenAI API key, or use UEHive as the Unreal-side MCP-style bridge for an
+              external assistant workflow.
             </p>
           </div>
         </aside>
@@ -144,12 +145,103 @@
         </div>
 
         <div class="workflow-callout">
-          <h3>Important: API keys and Codex handoff</h3>
+          <h3>Important: API keys are optional depending on the workflow</h3>
           <p class="callout-copy">
-            UEHive does not include a shared vendor API key. Paste your own Claude or OpenAI key
-            inside the local workspace settings. If you still want to use Codex externally, use
-            <strong>Copy for Codex</strong> and open Codex on the Unreal project root folder.
+            UEHive does not include a shared vendor API key. The built-in AI Workspace needs your
+            own Claude or OpenAI API key. The external MCP-style bridge workflow does not store an
+            AI key inside UEHive, because the external assistant handles its own login, subscription,
+            or provider access.
           </p>
+        </div>
+      </section>
+
+      <section class="section section-contrast" id="ai-access">
+        <div class="section-heading">
+          <p class="section-kicker">API or MCP</p>
+          <h2>Choose how the AI connects to UEHive</h2>
+          <p>
+            UEHive v0.9.8 supports two practical workflows. Both use the same Unreal-side
+            capabilities, but the AI access is handled differently.
+          </p>
+        </div>
+
+        <div class="getting-started-grid">
+          <article class="guide-card">
+            <h3>Built-in AI Workspace</h3>
+            <p>
+              Use this when you want to chat with Claude or OpenAI directly inside Unreal.
+              This mode requires your own Claude or OpenAI API key, stored locally under
+              <code>Saved/UEHive</code> for that Unreal project.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>MCP-style external bridge</h3>
+            <p>
+              Use this when you prefer an external assistant workflow. UEHive stays open in Unreal
+              and exposes the Unreal-side bridge, project context, and supported Blueprint/UMG
+              capabilities to the external assistant.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>What "no API key" means</h3>
+            <p>
+              It means no Claude/OpenAI key is stored inside UEHive. It does not mean the AI model
+              access is included. The external app still handles its own account, login,
+              subscription, or API access.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>How to use the bridge</h3>
+            <p>
+              Open your Unreal project, enable UEHive, and keep the editor running. UEHive starts
+              its local bridge at <code>http://127.0.0.1:17857/uehive/swarm</code> when the plugin
+              is active.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Confirm the bridge is online</h3>
+            <p>
+              In UEHive, the System panel should show <strong>Runtime ready</strong> or
+              <strong>Workspace ready</strong>. Advanced users can also check the local health route
+              through their configured connector: <code>/uehive/swarm/health</code>.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>External assistant setup</h3>
+            <p>
+              Open the external assistant from the Unreal project root when possible. Use
+              <strong>Copy for Codex</strong> when you want a clean handoff prompt that includes
+              project context and UEHive capabilities.
+            </p>
+          </article>
+        </div>
+
+        <div class="workflow-callout">
+          <h3>Use UEHive as an external assistant bridge</h3>
+          <ol class="workflow-list">
+            <li>Open the Unreal project that contains UEHive and keep Unreal Editor running.</li>
+            <li>Enable UEHive in <strong>Edit &gt; Plugins</strong> if it is not already enabled, then restart Unreal once.</li>
+            <li>Open <strong>Window &gt; UEHive &gt; UEHive AI Workspace</strong> so the runtime and bridge status are visible.</li>
+            <li>Confirm the System panel shows <strong>Runtime ready</strong> or <strong>Workspace ready</strong>.</li>
+            <li>Open your external assistant from the Unreal project root folder when possible.</li>
+            <li>Use the external assistant's MCP or tool setup to reach UEHive's local bridge endpoint: <code>http://127.0.0.1:17857/uehive/swarm</code>.</li>
+            <li>If your project has bridge authentication enabled, use the project-local UEHive bridge token or secret only on your own machine. Do not share it publicly.</li>
+            <li>Start with a safe test request, such as inspecting an open Blueprint or creating a Blueprint in a selected test folder.</li>
+          </ol>
+        </div>
+
+        <div class="workflow-callout">
+          <h3>Quick decision</h3>
+          <ol class="workflow-list">
+            <li>Want everything inside Unreal? Use the AI Workspace and add your own Claude/OpenAI API key.</li>
+            <li>Do not want to paste an API key into UEHive? Use the MCP-style external bridge with your external assistant.</li>
+            <li>Need the safest first test? Use the AI Workspace on <code>/Game/UEHiveWorkspaceTests</code> or a selected test folder.</li>
+          </ol>
         </div>
       </section>
 
@@ -200,7 +292,7 @@
             <h3>5. Execute approved plans</h3>
             <p>
               Approved plans reuse UEHive's native capabilities for Blueprint actors, Widget Blueprints,
-              widget layouts, graph scaffolds, inspections, level placement, and safe C++ helper drafts.
+              widget layouts, graph scaffolds, inspections, and level placement.
             </p>
           </article>
 
@@ -228,7 +320,8 @@
           <ol class="workflow-list">
             <li>Install UEHive from Epic Games Launcher and enable it in Unreal Editor 5.7.</li>
             <li>Open <strong>Window &gt; UEHive &gt; UEHive AI Workspace</strong>.</li>
-            <li>Paste your Claude or OpenAI API key and choose a model.</li>
+            <li>If using the built-in AI Workspace, paste your Claude or OpenAI API key and choose a model.</li>
+            <li>If using the MCP-style external bridge, keep Unreal open and connect from your external assistant instead.</li>
             <li>Open the included showcase map and inspect the shipped Blueprint examples.</li>
             <li>Select a safe Content Browser folder or open a test Blueprint before running a creation or inspection task.</li>
             <li>Compile and verify the result inside Unreal before continuing.</li>
@@ -312,6 +405,24 @@
           </article>
 
           <article class="guide-card">
+            <h3>I do not have an API key</h3>
+            <p>
+              You can still use UEHive as the Unreal-side bridge with an external assistant workflow.
+              UEHive will not store an AI key in that mode, but the external assistant still needs its
+              own account, subscription, or provider access.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>The external assistant cannot connect</h3>
+            <p>
+              Keep Unreal Editor open, confirm the UEHive System panel shows ready, and make sure
+              the external tool is using the active project root and local bridge endpoint. If bridge
+              auth is enabled, verify the local token or secret.
+            </p>
+          </article>
+
+          <article class="guide-card">
             <h3>Support checklist</h3>
             <p>
               When asking for help, include your Unreal version, Windows version, AI tool name,
@@ -352,8 +463,8 @@
             <p>Use the selected or open Blueprint for inspection and scaffolding, and the active folder for creation.</p>
           </article>
           <article class="capability-card">
-            <h3>C++ Draft Helper</h3>
-            <p>Generate reviewable header/source drafts under <code>Saved/UEHive/CppDrafts</code> without modifying project Source automatically.</p>
+            <h3>Preview and Approve</h3>
+            <p>Review the proposed action plan before UEHive modifies Blueprint or Widget assets.</p>
           </article>
         </div>
       </section>
@@ -445,7 +556,7 @@
               <li>UMG scaffold generation</li>
               <li>Gameplay interaction scaffolds</li>
               <li>Blueprint inspection and follow-up modification</li>
-              <li>Reviewable C++ helper draft generation</li>
+              <li>Automatic target resolution from selected assets and folders</li>
             </ul>
           </article>
 
@@ -455,7 +566,7 @@
               <li>UEHive v0.9.8 includes an AI Workspace for Claude/OpenAI API use inside Unreal</li>
               <li>Editor workflow plugin, not a runtime gameplay framework</li>
               <li>Recipe-based graph authoring, not arbitrary freeform graph generation</li>
-              <li>C++ helper drafts are saved for review and do not modify project Source automatically</li>
+              <li>MCP-style external bridge support is available for external assistant workflows</li>
               <li>No network replication requirement for the shipped showcase content</li>
             </ul>
           </article>
@@ -502,10 +613,10 @@
             </p>
           </article>
           <article class="guide-card">
-            <h3>Safe C++ drafting</h3>
+            <h3>API or external bridge choice</h3>
             <p>
-              UEHive can draft C++ helper files for review under <code>Saved/UEHive/CppDrafts</code>.
-              Source files are not changed automatically.
+              Buyers can use the built-in workspace with their own Claude/OpenAI API key, or keep
+              AI authentication outside UEHive through the MCP-style external bridge workflow.
             </p>
           </article>
           <article class="guide-card">
@@ -533,7 +644,7 @@
             <h3>Project Validation</h3>
             <p>
               Verified in a live Unreal project for Blueprint actor creation, Widget Blueprint
-              creation, scaffold application, target resolution, and C++ helper drafting.
+              creation, scaffold application, target resolution, and external bridge readiness.
             </p>
           </article>
           <article class="validation-card">
